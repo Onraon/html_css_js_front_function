@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html {
+    height: 100vh; /*높이 반응형에 %로 작동하는 단위*/
+}
+
+body {
+    height: 100%;/*차지할 수 있는 전체 높이를 가지도록 하는 것*/
+    display: flex;/*Flex 컨테이너에 적용*/
+    flex-direction: column;/*배치 방향 설정*/
+    justify-content: center;/*메인축 방향 정렬*/
+    align-items: center;/*수직축 방향 정렬*/
+    margin: 0;/*바깥여백*/
+}
+
+.timer-container {
+    color: rgb(50, 50, 50);
+    font-family: 'Roboto', sans-serif;/*글꼴이름*/
+    display: inline-block;/*전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치*/
+    padding: 40px;/*안쪽여백*/
+    border-radius: 20%;/*모서리 둥글게 20%정도*/
+    border: 15px solid rgb(55, 55, 55);
+    box-shadow: inset 0 0 3px 3px rgba(50, 50, 50, 0.3), inset 0 0 1px 2px rgba(50, 50, 50, 0.2);
+}
+
+.timer { 
+    position: relative;/*요소 자기 자신을 기준으로 배치*/
+    font-size: 20px;/*폰트 크기 20픽셀*/
+
+    width: 15em;/*넓이 15*/
+    height: 15em;/*높이 15*/
+}
+
+.timer .line {
+    width: 100%;/*차지할 수 있는 전체 넓이를 가지는 것*/
+    height: 1px;/*높이 1픽셀*/
+    top: calc(50% - 1px / 2);/*값의 길이를 계산할때나 각도, 수치, 변화형 과 샅은 경우 사용하는 함수*/
+
+    background: #000;/*배경색 검정색*/
+    position: absolute;/*부모(조상)요소를 기준으로 배치*/
+}
+
+.timer .line.thick {
+    width: calc(100% + .4em);
+    left: calc(-.4em / 2);
+
+    height: 3px;
+    top: calc(50% - 3px / 2);
+}
+
+.timer .cover1{
+    position: absolute;/*부모(조상)요소를 기준으로 배치*/
+    width: calc(100% - 4%);
+    height: calc(100% - 4%);
+    left: calc(4% / 2);
+    top: calc(4% / 2);
+    border-radius: 50%;/*완만한 정도 50%*/
+    background: #fff;/*배경 흰색*/
+    z-index: 1;/*위치 지정 요소, 그 자손 또는 하위 플렉스 아이템의 Z축 순서 지정*/
+}
+
+.fin {
+    position: absolute;/*부모(조상)요소를 기준으로 배치*/
+    width: 1px;/*가로 넓이 1픽셀*/
+    left: calc(50% - 1px / 2);
+
+    height: calc(50% - .3em);
+    top: .3em;
+
+    background: rgb(255, 57, 50);/*배경색 빨강*/
+    z-index: 2;/*위치 지정 요소, 그 자손 또는 하위 플렉스 아이템의 Z축 순서 지정*/
+    transform-origin: bottom;/*속성의 변환을 지정해준다*/
+}
+
+.timer .cover2 {
+    position: absolute;/*부모(조상)요소를 기준으로 배치*/
+    width: 18%;/*넓이 지정 가능한 위치의 18%*/
+    height: 18%;/*높이 지정 가능한 위치의 18%*/
+    left: calc(50% - 18% / 2);
+    top: calc(50% - 18% / 2);
+    
+    border-radius: 50%;/*완만한 정도 50%*/
+    background: #fff;/*배경색 흰색*/
+    z-index: 3;/*위치 지정 요소, 그 자손 또는 하위 플렉스 아이템의 Z축 순서 지정*/
+    box-shadow: 0 0 3px 3px rgba(50, 50, 50, 0.4), 0 0 1px 2px rgba(50, 50, 50, 0.3);/*요소의 테두리를 감싼 그림자 효과 추가*/
+}
+
+.num-box {
+    position: absolute;/*부모(조상)요소를 기준으로 배치*/
+    display: flex;/*Flex 컨테이너에 적용*/
+    justify-content: space-between;/*요소들의 간격을 최대로*/
+    align-items: center;/**/
+
+    width: calc(100% + 18%);
+    left: calc(-18% / 2);
+    height: 40px;
+    top: calc(50% - 40px/2);
+    font-weight: 600;
+}
+
+.button-container {
+    margin-top: 60px;
+}
+
+.control {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #555;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    color: rgb(255, 57, 50);
+}
+.control:active {
+    transform: scale(.96);
+}
+
+.time-container {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+.time-container .total-time {
+    font-size: 13px;
+    margin-top: 5px;
+}

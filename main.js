@@ -2,11 +2,11 @@ var start = document.getElementById('start');
 var stop = document.getElementById('stop');
 var reset = document.getElementById('reset');
 
-var wm = document.getElementById('w_minutes');
-var ws = document.getElementById('w_seconds');
+var wm = document.getElementById('w_minutes');//w 분 선언
+var ws = document.getElementById('w_seconds');//w 초 선언
 
-var bm = document.getElementById('b_minutes');
-var bs = document.getElementById('b_seconds');
+var bm = document.getElementById('b_minutes');//b 분 선언
+var bs = document.getElementById('b_seconds');//b 초 선언
 
 //store a reference to a timer variable
 var startTimer;
